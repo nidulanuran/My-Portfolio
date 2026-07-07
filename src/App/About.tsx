@@ -1,5 +1,7 @@
 import { motion } from 'motion/react'
 import { GraduationCap,MapPin,Calendar, icons } from 'lucide-react'
+import ProfilePic from '../assets/Profile Pic.png'
+import CV from '../assets/Nidula.pdf'
 
 
 function About(){
@@ -36,7 +38,7 @@ function About(){
                             <div className="w-full aspect-square max-w-sm mx-auto md:mx-0 rounded-2xl overflow-hidden border border-[#00d4ff]/15">
 
                                 <img 
-                                    src="src\assets\Profile Pic.png"
+                                    src={ProfilePic}
                                     alt="Profile Picture"
                                     className="w-full h-full object-cover"
                                 />
@@ -105,7 +107,7 @@ function About(){
                             }
                         </div>
 
-                        <a href="src\assets\Nidula.pdf"
+                        <a href={CV} download
                            className="inline-flex items-center gap-2 mt-2 px-6 py-3 border border-[#00d4ff]/40 text-[#00d4ff] text-sm rounded hover:bg-[#00d4ff]/10 transition-colors duration-200"
                            style={{ fontFamily: "'Inter', sans-serif" }}
                            >

@@ -32,7 +32,7 @@ function Contact(){
                     className="text-3xl md:text-4xl text-white mt-3"
                     style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700 }}
                     >
-                        Let's Work Together
+                        Contacts
                     </h2>
 
                     <p
