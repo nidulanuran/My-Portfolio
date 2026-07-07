@@ -4,33 +4,19 @@ import {Send,Mail} from "lucide-react"
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import emailjs from "@emailjs/browser"
 
-declare const process: {
-    env: {
-        SERVICE_ID?: string
-        TEMPLATE_ID?: string
-        PUBLIC_KEY?: string
-    }
-}
-
 function Contact(){
 
     const [form,setForm]=useState({name:"",email:"",message:""})
     const [status,setStatus]=useState<"idle"|"sending"|"sent">("idle")
     const myEmail="nidulanuran22@gmail.com"
 
-    const { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY } = process.env
 
-    const handleSubmit=async(e:React.FormEvent)=>{
+    const handleSubmit=(e:React.FormEvent)=>{
         e.preventDefault()
-
-        if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
-            console.error("Email service is not configured properly.")
-            return
-        }
 
         setStatus("sending")
         
-        emailjs.send(SERVICE_ID,TEMPLATE_ID,form,{ publicKey: PUBLIC_KEY }
+        emailjs.send(import.meta.env.VITE_SERVICE_ID , import.meta.env.VITE_TEMPLATE_ID ,form,{ publicKey: import.meta.env.VITE_PUBLIC_KEY }
         ).then(
             () => {
                 window.alert("Message Sent!")
@@ -137,7 +123,7 @@ function Contact(){
                         <button
                         type="submit"
                         disabled={status !=="idle"}
-                        className="flex items-center gap-2 px-6 py-3 bg-[#00d4ff] text-[#050a14] rounded-lg text-sm hover:bg-[#00b8d9] disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-200"
+                        className="flex items-center gap-2 px-6 py-3 bg-[#00d4ff] text-[#050a14] rounded-lg text-sm hover:bg-[#00b8d9] disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-200 cursor-pointer"
                         style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600 }}
 
                         >
