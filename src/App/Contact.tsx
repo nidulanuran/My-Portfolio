@@ -1,20 +1,47 @@
 import { useState } from "react"
-import {motion} from "motion/react"
+import { motion} from "motion/react"
 import {Send,Mail} from "lucide-react"
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import emailjs from "@emailjs/browser"
+
+declare const process: {
+    env: {
+        SERVICE_ID?: string
+        TEMPLATE_ID?: string
+        PUBLIC_KEY?: string
+    }
+}
 
 function Contact(){
 
     const [form,setForm]=useState({name:"",email:"",message:""})
     const [status,setStatus]=useState<"idle"|"sending"|"sent">("idle")
+    const myEmail="nidulanuran22@gmail.com"
 
-    const handleSubmit=(e:React.FormEvent)=>{
+    const { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY } = process.env
+
+    const handleSubmit=async(e:React.FormEvent)=>{
         e.preventDefault()
+
+        if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+            console.error("Email service is not configured properly.")
+            return
+        }
+
         setStatus("sending")
-        setTimeout(()=>{
-            setStatus("sent")
-            setForm({name:"",email:"",message:""})
-        },1400)
+        
+        emailjs.send(SERVICE_ID,TEMPLATE_ID,form,{ publicKey: PUBLIC_KEY }
+        ).then(
+            () => {
+                window.alert("Message Sent!")
+                setForm({name:"",email:"",message:""})
+                setStatus("sent")
+            },
+            (error) => {
+                window.alert('FAILED...' + error)
+                setStatus("idle")
+            }
+        )
         
     }
 
@@ -47,7 +74,7 @@ function Contact(){
 
                 <div className="grid md:grid-cols-2 gap-12">
 
-                    <motion.form
+                    <motion.form 
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.2 }}
@@ -155,12 +182,12 @@ function Contact(){
                             <div className="space-y-3">
 
                                 <a 
-                                href="mailto:nidulanura22@gmail.com"
+                                href={`mailto:${myEmail}`}
                                 className="flex items-center gap-3 text-[#7a8ba8] hover:text-[#00d4ff] text-sm transition-colors"
                                 style={{ fontFamily: "'Inter', sans-serif" }}
                                 >
 
-                                <Mail/>nidulanuran22@gmail.com
+                                <Mail/>{myEmail}
                                 </a>
 
                             </div>
