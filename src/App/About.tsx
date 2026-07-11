@@ -64,7 +64,7 @@ function About(){
                         className="text-[#7a8ba8] leading-relaxed text-base"
                         style={{ fontFamily: "'Inter', sans-serif" }}
                         >
-                        I'm a third-year AI Engineering student at SLIIT with a deep passion for
+                        I'm a third year AI Engineering student at SLIIT with a deep passion for
                         building systems that think. My work spans from training custom
                         language models to deploying production-grade ML pipelines that
                         actually scale.
@@ -74,7 +74,7 @@ function About(){
                         style={{ fontFamily: "'Inter', sans-serif" }}
                         >
                         I believe the most exciting frontier is where rigorous
-                        engineering meets frontier AI research — systems that are not just
+                        engineering meets frontier AI research systems that are not just
                         smart, but reliable, efficient, and aligned with human intent.
                         </p>
 
