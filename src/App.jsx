@@ -1,10 +1,9 @@
 import { lazy,Suspense } from "react"
-// import Home from './App/Home'
-// import Navbar from './App/Navbar'
-
+import Home from './App/Home'
+import Navbar from './App/Navbar'
 import Loader from "./UI/Loader"
-const Navbar=lazy(()=>import('./App/Navbar'))
-const Home=lazy(()=>import('./App/Home'))
+// const Navbar=lazy(()=>import('./App/Navbar'))
+// const Home=lazy(()=>import('./App/Home'))
 const About=lazy(()=>import('./App/About'))
 const Projects=lazy(()=>import('./App/Projects'))
 const Contact=lazy(()=>import('./App/Contact'))
