@@ -1,8 +1,8 @@
 import {motion,AnimatePresence} from "motion/react"
 import { AiFillGithub } from "react-icons/ai"
 import { ExternalLink,Brain,Bot,Database,Eye } from "lucide-react"
-import EquieHireImg from '../assets/equihire.png'
-import VSRMSImg from '../assets/VSMRS_Img.png'
+import EquieHireImg from '../assets/equihire.webp'
+import VSRMSImg from '../assets/VSMRS_Img.webp'
 
 const projects=[
     {
@@ -90,6 +90,7 @@ function Projects(){
                                 <div className="relative h-44 overflow-hidden bg-[#0f1a2e]">
                                     <img src={project.image}
                                          alt={project.title}
+                                         loading="lazy"
                                          className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
                                          />
                                          <div className="absolute inset-0 bg-gradient-to-t from-[#0c1526] via-transparent to-transparent"/>

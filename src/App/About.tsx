@@ -1,6 +1,6 @@
 import { motion } from 'motion/react'
 import { GraduationCap,MapPin,Calendar, icons } from 'lucide-react'
-import ProfilePic from '../assets/Profile Pic.png'
+import ProfilePic from '../assets/Profile Pic.webp'
 import CV from '../assets/Nidula.pdf'
 
 
@@ -41,6 +41,7 @@ function About(){
                                     src={ProfilePic}
                                     alt="Profile Picture"
                                     className="w-full h-full object-cover"
+                                    loading='lazy'
                                 />
 
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#050a14]/40 to-transparent" />

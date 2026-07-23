@@ -73,10 +73,19 @@ function AnimatedGrid() {
       animId = requestAnimationFrame(draw);
     };
 
-    draw();
+    const observer = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) {
+      animId = requestAnimationFrame(draw);
+    } else {
+      cancelAnimationFrame(animId);
+    }
+    }, { threshold: 0 });
+    observer.observe(canvas);
+
     return () => {
       cancelAnimationFrame(animId);
       window.removeEventListener("resize", resize);
+      observer.disconnect();
     };
   }, []);
 

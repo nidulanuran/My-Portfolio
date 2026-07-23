@@ -2,7 +2,7 @@ import { useState } from "react"
 import { motion} from "motion/react"
 import {Send,Mail} from "lucide-react"
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import emailjs from "@emailjs/browser"
+
 
 function Contact(){
 
@@ -11,10 +11,12 @@ function Contact(){
     const myEmail="nidulanuran22@gmail.com"
 
 
-    const handleSubmit=(e:React.FormEvent)=>{
+    const handleSubmit=async (e:React.FormEvent)=>{
         e.preventDefault()
 
         setStatus("sending")
+
+        const emailjs=(await import("@emailjs/browser")).default
         
         emailjs.send(import.meta.env.VITE_SERVICE_ID , import.meta.env.VITE_TEMPLATE_ID ,form,{ publicKey: import.meta.env.VITE_PUBLIC_KEY }
         ).then(
