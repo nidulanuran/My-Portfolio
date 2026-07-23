@@ -2,6 +2,7 @@ import { lazy,Suspense } from "react"
 
 import Navbar from "./App/Navbar"
 import Home from "./App/Home"
+import Loader from "./UI/Loader"
 const About=lazy(()=>import('./App/About'))
 const Projects=lazy(()=>import('./App/Projects'))
 const Contact=lazy(()=>import('./App/Contact'))
@@ -19,7 +20,7 @@ function App() {
       `}</style>
       <Navbar/>
       <Home/>
-      <Suspense fallback={<div className="h-screen"></div>}>
+      <Suspense fallback={<Loader/>}>
         <About/>
         <Projects/>
         <Contact/>
