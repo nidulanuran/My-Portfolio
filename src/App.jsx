@@ -2,12 +2,10 @@ import { lazy,Suspense } from "react"
 import Home from './App/Home'
 import Navbar from './App/Navbar'
 import Loader from "./UI/Loader"
-// const Navbar=lazy(()=>import('./App/Navbar'))
-// const Home=lazy(()=>import('./App/Home'))
-const About=lazy(()=>import('./App/About'))
-const Projects=lazy(()=>import('./App/Projects'))
-const Contact=lazy(()=>import('./App/Contact'))
-const Footer=lazy(()=>import('./App/Footer'))
+import About from './App/About'
+import Projects from './App/Projects'
+import Contact from './App/Contact'
+import Footer from './App/Footer'
 
 function App() {
 
@@ -20,15 +18,12 @@ function App() {
         *:hover { scrollbar-width: thin; scrollbar-color: rgba(0,212,255,0.2) transparent; }
       `}</style>
       
-      
         <Navbar/>
-        <Home/>
-      <Suspense fallback={<Loader/>}>
+        <Home/>     
         <About/>
         <Projects/>
         <Contact/>
         <Footer/>
-      </Suspense>
         
     </div>
     
