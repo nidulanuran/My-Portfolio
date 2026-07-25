@@ -180,9 +180,3 @@
   }
 }
 
-body {
-  background: 
-    radial-gradient(circle at 50% 33%, rgba(0,212,255,0.05), transparent 60%),
-    radial-gradient(circle at 33% 50%, rgba(124,58,237,0.05), transparent 60%),
-    #050a14;
-}
