@@ -65,10 +65,7 @@ function About(){
                         className="text-[#7a8ba8] leading-relaxed text-base"
                         style={{ fontFamily: "'Inter', sans-serif" }}
                         >
-                        I'm a third year AI Engineering student at SLIIT with a deep passion for
-                        building systems that think. My work spans from training custom
-                        language models to deploying production-grade ML pipelines that
-                        actually scale.
+                        I’m a third year IT undergraduate specializing in Artificial Intelligence at SLIIT. I enjoy building practical applications that combine AI with software engineering.
                         </p>
                         <p
                         className="text-[#7a8ba8] leading-relaxed text-base"

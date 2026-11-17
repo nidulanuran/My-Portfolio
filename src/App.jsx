@@ -1,11 +1,12 @@
 import { lazy,Suspense } from "react"
-import Home from './App/Home'
-import Navbar from './App/Navbar'
+import Navbar from "./App/Navbar"
+import Home from "./App/Home"
+const About = lazy(() => import('./App/About'))
+const Projects = lazy(() => import('./App/Projects'))
+const Contact = lazy(() => import('./App/Contact'))
+const Footer = lazy(() => import('./App/Footer'))
 import Loader from "./UI/Loader"
-import About from './App/About'
-import Projects from './App/Projects'
-import Contact from './App/Contact'
-import Footer from './App/Footer'
+
 
 function App() {
 
@@ -19,11 +20,16 @@ function App() {
       `}</style>
       
         <Navbar/>
-        <Home/>     
-        <About/>
-        <Projects/>
-        <Contact/>
-        <Footer/>
+        <Home/> 
+
+        <Suspense fallback={<Loader/>}>
+
+          <About/>
+          <Projects/>
+          <Contact/>
+          <Footer/>
+
+        </Suspense>
         
     </div>
     
