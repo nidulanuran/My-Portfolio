@@ -1,7 +1,7 @@
 import { motion } from 'motion/react'
 import { GraduationCap,MapPin,Calendar} from 'lucide-react'
 import ProfilePic from '../assets/Profile Pic.webp'
-import CV from '../assets/Nidula_CV.pdf'
+
 
 
 function About(){
@@ -105,12 +105,17 @@ function About(){
                             }
                         </div>
 
-                        <a href={CV} download
-                           className="inline-flex items-center gap-2 mt-2 px-6 py-3 border border-[#00d4ff]/40 text-[#00d4ff] text-sm rounded hover:bg-[#00d4ff]/10 transition-colors duration-200"
-                           style={{ fontFamily: "'Inter', sans-serif" }}
-                           >
-                            Download Resume
+
+                        <a
+                            href="/files/Nidula_Nuran_CV.pdf"
+                            download="Nidula_Nuran_CV.pdf"
+                            className="inline-flex items-center gap-2 mt-2 px-6 py-3 border border-[#00d4ff]/40 text-[#00d4ff] text-sm rounded hover:bg-[#00d4ff]/10 transition-colors duration-200"
+                            style={{ fontFamily: "'Inter', sans-serif" }}
+                            >
+                            Download CV (PDF)
                         </a>
+
+
 
                     </motion.div>
 
