@@ -1,7 +1,7 @@
 import { motion } from 'motion/react'
 import { GraduationCap,MapPin,Calendar} from 'lucide-react'
 import ProfilePic from '../assets/Profile Pic.webp'
-import CV from '../assets/Nidula.pdf'
+import CV from '../assets/Nidula_CV.pdf'
 
 
 function About(){
